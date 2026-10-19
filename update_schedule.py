@@ -1,53 +1,88 @@
-import json
-import os
-import urllib.parse
-import urllib.request
 
-API_KEY = os.environ["YOUTUBE_API_KEY"]
+import json
+import subprocess
+from datetime import datetime, timezone
+
 CHANNELS = {
-    "緋八マナ": "HibachiMana",
-    "佐伯イッテツ": "SaikiIttetsu",
-    "宇佐美リト": "UsamiRito",
-    "赤城ウェン": "AkagiWen",
+    "緋八マナ": "https://www.youtube.com/@HibachiMana/streams",
+    "佐伯イッテツ": "https://www.youtube.com/@SaikiIttetsu/streams",
+    "宇佐美リト": "https://www.youtube.com/@UsamiRito/streams",
+    "赤城ウェン": "https://www.youtube.com/@AkagiWen/streams",
 }
 
-def api_get(endpoint, params):
-    params["key"] = API_KEY
-    url = "https://www.googleapis.com/youtube/v3/" + endpoint + "?" + urllib.parse.urlencode(params)
-    with urllib.request.urlopen(url, timeout=30) as response:
-        return json.load(response)
+def get_streams(name, channel_url):
+    items = []
 
-items = []
-for name, handle in CHANNELS.items():
     try:
-        channel_data = api_get("channels", {"part": "id,snippet", "forHandle": handle})
-        channels = channel_data.get("items", [])
-        if not channels:
-            print("Channel not found:", name, handle)
-            continue
-        channel_id = channels[0]["id"]
-        result = api_get("search", {
-            "part": "snippet",
-            "channelId": channel_id,
-            "type": "video",
-            "eventType": "upcoming",
-            "maxResults": 10,
-            "order": "date",
-        })
-        for video in result.get("items", []):
-            snippet = video["snippet"]
+        result = subprocess.run(
+            [
+                "yt-dlp",
+                "--flat-playlist",
+                "--dump-single-json",
+                "--no-warnings",
+                "--ignore-errors",
+                "--playlist-end", "50",
+                channel_url,
+            ],
+            capture_output=True,
+            text=True,
+            timeout=120,
+            check=True,
+        )
+
+        data = json.loads(result.stdout)
+
+        for video in data.get("entries") or []:
+            if not video:
+                continue
+
+            if video.get("live_status") != "is_upcoming":
+                continue
+
+            video_id = video.get("id")
+            scheduled = (
+                video.get("release_timestamp")
+                or video.get("timestamp")
+            )
+
+            if not video_id or not scheduled:
+                continue
+
+            scheduled_at = datetime.fromtimestamp(
+                scheduled, timezone.utc
+            ).isoformat().replace("+00:00", "Z")
+
+            thumbnails = video.get("thumbnails") or []
+            thumbnail = (
+                video.get("thumbnail")
+                or (thumbnails[-1].get("url") if thumbnails else "")
+            )
+
             items.append({
                 "name": name,
-                "title": snippet.get("title", "配信予定"),
-                "videoId": video["id"]["videoId"],
-                "url": "https://www.youtube.com/watch?v=" + video["id"]["videoId"],
-                "thumbnail": snippet.get("thumbnails", {}).get("medium", {}).get("url", ""),
-                "scheduledAt": snippet.get("publishedAt", ""),
+                "title": video.get("title") or "配信予定",
+                "videoId": video_id,
+                "url": "https://www.youtube.com/watch?v=" + video_id,
+                "thumbnail": thumbnail,
+                "scheduledAt": scheduled_at,
             })
+
+        print(name + ": " + str(len(items)) + " upcoming streams")
+
     except Exception as error:
-        print("Error for", name, ":", error)
+        print("Error for " + name + ": " + str(error))
+
+    return items
+
+
+items = []
+
+for name, channel_url in CHANNELS.items():
+    items.extend(get_streams(name, channel_url))
 
 items.sort(key=lambda item: item["scheduledAt"])
+
 with open("schedule.json", "w", encoding="utf-8") as output:
     json.dump(items, output, ensure_ascii=False, indent=2)
+
 print("Saved", len(items), "upcoming streams")
