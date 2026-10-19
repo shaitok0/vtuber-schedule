@@ -16,10 +16,7 @@
     }
     h1 { font-size: 23px; }
     .note { color: #666; font-size: 13px; }
-    #schedule {
-      display: grid;
-      gap: 14px;
-    }
+    #schedule { display: grid; gap: 14px; }
     .stream {
       display: flex;
       gap: 12px;
@@ -54,66 +51,102 @@
 </head>
 <body>
   <h1>📺 Oriens 配信スケジュール</h1>
-  <p class="note">配信予定を自動で読み込むよ！</p>
+  <p class="note">
+    配信予定を自動で読み込むよ！
+  </p>
   <main id="schedule">
     <p class="message">スケジュールを読み込み中…</p>
   </main>
 
   <script>
+    async function readJSON(path) {
+      try {
+        const response = await fetch(path);
+        if (!response.ok) return [];
+        const data = await response.json();
+        return Array.isArray(data) ? data : [];
+      } catch {
+        return [];
+      }
+    }
+
     async function loadSchedule() {
       const area = document.getElementById("schedule");
-      try {
-        const response = await fetch("./schedule.json");
-        if (!response.ok) throw new Error("読み込み失敗");
-        const items = await response.json();
 
-        items.sort((a, b) =>
+      const [automatic, manual] = await Promise.all([
+        readJSON("./schedule.json"),
+        readJSON("./manual_schedule.json")
+      ]);
+
+      // 手動登録した予定を優先し、URLの重複を防ぐ
+      const items = [...manual, ...automatic];
+      const unique = new Map();
+
+      for (const item of items) {
+        if (!item.url || !item.scheduledAt) continue;
+        const key = item.url;
+        if (!unique.has(key)) unique.set(key, item);
+      }
+
+      const upcoming = [...unique.values()]
+        .filter(item => new Date(item.scheduledAt).getTime() >= Date.now())
+        .sort((a, b) =>
           new Date(a.scheduledAt) - new Date(b.scheduledAt)
         );
 
-        if (!items.length) {
-          area.innerHTML = '<p class="message">現在、配信予定はありません。</p>';
-          return;
-        }
-
-        area.innerHTML = items.map(item => {
-          const date = new Date(item.scheduledAt);
-          const dateText = new Intl.DateTimeFormat("ja-JP", {
-            month: "numeric",
-            day: "numeric",
-            weekday: "short",
-            hour: "2-digit",
-            minute: "2-digit",
-            timeZone: "Asia/Tokyo"
-          }).format(date);
-
-          return `
-            <article class="stream">
-              <a href="${item.url}" target="_blank" rel="noopener">
-                <img src="${item.thumbnail}" alt="">
-              </a>
-              <div class="info">
-                <div class="name">${escapeHTML(item.name)}</div>
-                <div class="title">
-                  <a href="${item.url}" target="_blank" rel="noopener">
-                    ${escapeHTML(item.title)}
-                  </a>
-                </div>
-                <div class="date">🗓 ${dateText}</div>
-                <p><a href="${item.url}" target="_blank" rel="noopener">▶ YouTubeで見る</a></p>
-              </div>
-            </article>`;
-        }).join("");
-      } catch (error) {
+      if (!upcoming.length) {
         area.innerHTML =
-          '<p class="message">予定を読み込めなかったよ。少し待ってから再読み込みしてね。</p>';
+          '<p class="message">現在、配信予定はありません。</p>';
+        return;
       }
+
+      area.innerHTML = upcoming.map(item => {
+        const date = new Date(item.scheduledAt);
+        const dateText = new Intl.DateTimeFormat("ja-JP", {
+          month: "numeric",
+          day: "numeric",
+          weekday: "short",
+          hour: "2-digit",
+          minute: "2-digit",
+          timeZone: "Asia/Tokyo"
+        }).format(date);
+
+        const thumbnail = item.thumbnail
+          ? `<a href="${escapeHTML(item.url)}" target="_blank" rel="noopener">
+               <img src="${escapeHTML(item.thumbnail)}" alt="">
+             </a>`
+          : "";
+
+        return `
+          <article class="stream">
+            ${thumbnail}
+            <div class="info">
+              <div class="name">${escapeHTML(item.name)}</div>
+              <div class="title">
+                <a href="${escapeHTML(item.url)}"
+                   target="_blank" rel="noopener">
+                  ${escapeHTML(item.title)}
+                </a>
+              </div>
+              <div class="date">🗓 ${dateText}</div>
+              <p>
+                <a href="${escapeHTML(item.url)}"
+                   target="_blank" rel="noopener">
+                  ▶ YouTubeで見る
+                </a>
+              </p>
+            </div>
+          </article>`;
+      }).join("");
     }
 
     function escapeHTML(value) {
       return String(value ?? "").replace(/[&<>"']/g, char => ({
-        "&": "&amp;", "<": "&lt;", ">": "&gt;",
-        '"': "&quot;", "'": "&#39;"
+        "&": "&amp;",
+        "<": "&lt;",
+        ">": "&gt;",
+        '"': "&quot;",
+        "'": "&#39;"
       })[char]);
     }
 
