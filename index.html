@@ -2,155 +2,137 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Oriens 配信スケジュール</title>
-  <style>
-    * { box-sizing: border-box; }
-    body {
-      font-family: sans-serif;
-      background: #f5f5fa;
-      color: #222;
-      margin: 0;
-      padding: 16px;
-    }
-    h1 { font-size: 23px; }
-    .note { color: #666; font-size: 13px; }
-    #schedule { display: grid; gap: 14px; }
-    .stream {
-      display: flex;
-      gap: 12px;
-      background: white;
-      border-radius: 14px;
-      padding: 12px;
-      box-shadow: 0 2px 8px #0001;
-    }
-    .stream img {
-      width: 42%;
-      height: auto;
-      align-self: flex-start;
-      object-fit: cover;
-      border-radius: 8px;
-    }
-    .info { min-width: 0; }
-    .name { font-size: 13px; color: #6554a4; font-weight: bold; }
-    .title {
-      font-size: 15px;
-      font-weight: bold;
-      margin: 7px 0;
-      overflow-wrap: anywhere;
-    }
-    .date { font-size: 12px; color: #666; }
-    a { color: inherit; text-decoration: none; }
-    .message {
-      background: white;
-      border-radius: 12px;
-      padding: 16px;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Oriens 配信スケジュール</title>
+<style>
+* { box-sizing: border-box; }
+body {
+  font-family: sans-serif;
+  background: #f5f5fa;
+  color: #222;
+  margin: 0;
+  padding: 16px;
+}
+h1 { font-size: 23px; }
+h2 { font-size: 19px; margin-top: 28px; }
+.note { color: #666; font-size: 13px; }
+#schedule { display: grid; gap: 14px; }
+.stream {
+  display: flex;
+  gap: 12px;
+  background: white;
+  border-radius: 14px;
+  padding: 12px;
+  box-shadow: 0 2px 8px #0001;
+}
+.stream img {
+  width: 42%;
+  height: auto;
+  align-self: flex-start;
+  object-fit: cover;
+  border-radius: 8px;
+}
+.info { min-width: 0; flex: 1; }
+.name { font-size: 13px; color: #6554a4; font-weight: bold; }
+.title {
+  font-size: 15px;
+  font-weight: bold;
+  margin: 7px 0;
+  overflow-wrap: anywhere;
+}
+.date { font-size: 12px; color: #666; }
+a { color: inherit; text-decoration: none; }
+.message {
+  background: white;
+  border-radius: 12px;
+  padding: 16px;
+}
+.status { font-size: 12px; font-weight: bold; }
+</style>
 </head>
 <body>
-  <h1>📺 Oriens 配信スケジュール</h1>
-  <p class="note">
-    配信予定を自動で読み込むよ！
-  </p>
-  <main id="schedule">
-    <p class="message">スケジュールを読み込み中…</p>
-  </main>
+<h1>📺 Oriens 配信スケジュール</h1>
+<p class="note">配信情報を自動で読み込むよ！</p>
+<p class="note" id="updated"></p>
+<main id="schedule">
+  <p class="message">読み込み中…</p>
+</main>
 
-  <script>
-    async function readJSON(path) {
-      try {
-        const response = await fetch(path);
-        if (!response.ok) return [];
-        const data = await response.json();
-        return Array.isArray(data) ? data : [];
-      } catch {
-        return [];
-      }
+<script>
+async function loadSchedule() {
+  const area = document.getElementById("schedule");
+
+  try {
+    const response = await fetch("./schedule.json?time=" + Date.now());
+    if (!response.ok) throw new Error("schedule.jsonを読み込めません");
+
+    const data = await response.json();
+    if (!Array.isArray(data)) throw new Error("データ形式が違います");
+
+    const unique = new Map();
+    for (const item of data) {
+      if (item.url && !unique.has(item.url)) unique.set(item.url, item);
     }
 
-    async function loadSchedule() {
-      const area = document.getElementById("schedule");
+    const items = [...unique.values()];
+    const live = items.filter(x => x.status === "live");
+    const upcoming = items.filter(x => x.status === "upcoming")
+      .sort((a, b) => new Date(a.scheduledAt) - new Date(b.scheduledAt));
+    const past = items.filter(x => x.status === "past")
+      .sort((a, b) => new Date(b.scheduledAt) - new Date(a.scheduledAt));
 
-      const [automatic, manual] = await Promise.all([
-        readJSON("./schedule.json"),
-        readJSON("./manual_schedule.json")
-      ]);
+    function escapeHTML(value) {
+      return String(value ?? "").replace(/[&<>"']/g, c => ({
+        "&": "&amp;", "<": "&lt;", ">": "&gt;",
+        '"': "&quot;", "'": "&#39;"
+      })[c]);
+    }
 
-      // 手動登録した予定を優先し、URLの重複を防ぐ
-      const items = [...manual, ...automatic];
-      const unique = new Map();
-
-      for (const item of items) {
-        if (!item.url || !item.scheduledAt) continue;
-        const key = item.url;
-        if (!unique.has(key)) unique.set(key, item);
-      }
-
-      const upcoming = [...unique.values()]
-        .filter(item => new Date(item.scheduledAt).getTime() >= Date.now())
-        .sort((a, b) =>
-          new Date(a.scheduledAt) - new Date(b.scheduledAt)
-        );
-
-      if (!upcoming.length) {
-        area.innerHTML =
-          '<p class="message">現在、配信予定はありません。</p>';
-        return;
-      }
-
-      area.innerHTML = upcoming.map(item => {
-        const date = new Date(item.scheduledAt);
-        const dateText = new Intl.DateTimeFormat("ja-JP", {
-          month: "numeric",
-          day: "numeric",
-          weekday: "short",
-          hour: "2-digit",
-          minute: "2-digit",
+    function card(item) {
+      const date = new Date(item.scheduledAt);
+      const dateText = Number.isNaN(date.getTime()) ? "日時不明" :
+        new Intl.DateTimeFormat("ja-JP", {
+          year: "numeric", month: "numeric", day: "numeric",
+          weekday: "short", hour: "2-digit", minute: "2-digit",
           timeZone: "Asia/Tokyo"
         }).format(date);
 
-        const thumbnail = item.thumbnail
-          ? `<a href="${escapeHTML(item.url)}" target="_blank" rel="noopener">
-               <img src="${escapeHTML(item.thumbnail)}" alt="">
-             </a>`
-          : "";
+      const label = item.status === "live" ? "🔴 配信中" :
+        item.status === "upcoming" ? "🗓️ 配信予定" : "📼 過去の配信";
 
-        return `
-          <article class="stream">
-            ${thumbnail}
-            <div class="info">
-              <div class="name">${escapeHTML(item.name)}</div>
-              <div class="title">
-                <a href="${escapeHTML(item.url)}"
-                   target="_blank" rel="noopener">
-                  ${escapeHTML(item.title)}
-                </a>
-              </div>
-              <div class="date">🗓 ${dateText}</div>
-              <p>
-                <a href="${escapeHTML(item.url)}"
-                   target="_blank" rel="noopener">
-                  ▶ YouTubeで見る
-                </a>
-              </p>
-            </div>
-          </article>`;
-      }).join("");
+      return `<article class="stream">
+        ${item.thumbnail ? `<a href="${escapeHTML(item.url)}" target="_blank" rel="noopener"><img src="${escapeHTML(item.thumbnail)}" alt=""></a>` : ""}
+        <div class="info">
+          <div class="name">${escapeHTML(item.name)}</div>
+          <div class="status">${label}</div>
+          <div class="title"><a href="${escapeHTML(item.url)}" target="_blank" rel="noopener">${escapeHTML(item.title)}</a></div>
+          <div class="date">🗓 ${dateText}</div>
+          <p><a href="${escapeHTML(item.url)}" target="_blank" rel="noopener">▶ YouTubeで見る</a></p>
+        </div>
+      </article>`;
     }
 
-    function escapeHTML(value) {
-      return String(value ?? "").replace(/[&<>"']/g, char => ({
-        "&": "&amp;",
-        "<": "&lt;",
-        ">": "&gt;",
-        '"': "&quot;",
-        "'": "&#39;"
-      })[char]);
+    function section(title, list) {
+      return `<section><h2>${title}（${list.length}）</h2>${
+        list.length ? list.map(card).join("") :
+        '<p class="message">現在、表示できる配信はありません。</p>'
+      }</section>`;
     }
 
-    loadSchedule();
-  </script>
+    area.innerHTML =
+      section("🔴 配信中", live) +
+      section("🗓️ 配信予定", upcoming) +
+      section("📼 過去の配信", past);
+
+    document.getElementById("updated").textContent =
+      "ページ確認時刻：" + new Date().toLocaleString("ja-JP");
+  } catch (error) {
+    area.innerHTML = '<p class="message">読み込みに失敗しました。少し待って再読み込みしてね。</p>';
+  }
+}
+
+loadSchedule();
+</script>
 </body>
 </html>
