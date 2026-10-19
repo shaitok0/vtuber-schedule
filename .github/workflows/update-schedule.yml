@@ -1,3 +1,4 @@
+
 name: Update VTuber Schedule
 
 on:
@@ -14,14 +15,18 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
+
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+
+      - name: Install yt-dlp
+        run: python -m pip install --upgrade yt-dlp
+
       - name: Run schedule updater
-        env:
-          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
         run: python update_schedule.py
+
       - name: Save updated schedule
         run: |
           git config user.name 'github-actions[bot]'
