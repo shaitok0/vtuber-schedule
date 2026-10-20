@@ -8,127 +8,211 @@
 <style>
 * { box-sizing: border-box; }
 body {
-  font-family: sans-serif;
-  background: #f5f5fa;
-  color: #222;
   margin: 0;
   padding: 16px;
+  font-family: sans-serif;
+  background: #f5f5fa;
+  color: #282536;
 }
-h1 { font-size: 23px; }
-h2 { font-size: 19px; margin-top: 28px; }
-.note { color: #666; font-size: 13px; }
-#schedule { display: grid; gap: 14px; }
+h1 { font-size: 23px; margin-bottom: 6px; }
+.note { color: #777; font-size: 13px; }
+nav {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding: 10px 0 16px;
+}
+nav a {
+  flex-shrink: 0;
+  padding: 9px 12px;
+  border-radius: 20px;
+  background: white;
+  border: 1px solid #e5e1f0;
+  font-size: 13px;
+}
+a { color: inherit; text-decoration: none; }
+.member {
+  margin: 18px 0 28px;
+  scroll-margin-top: 12px;
+}
+.member-heading {
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: #e9e4f8;
+  color: #46366d;
+  font-size: 19px;
+  font-weight: bold;
+}
+.streams {
+  display: grid;
+  gap: 12px;
+  margin-top: 12px;
+}
 .stream {
   display: flex;
   gap: 12px;
+  padding: 11px;
   background: white;
   border-radius: 14px;
-  padding: 12px;
-  box-shadow: 0 2px 8px #0001;
+  box-shadow: 0 2px 8px #0000000c;
 }
 .stream img {
-  width: 42%;
+  width: 40%;
+  max-width: 180px;
   height: auto;
-  align-self: flex-start;
   object-fit: cover;
-  border-radius: 8px;
+  align-self: flex-start;
+  border-radius: 9px;
 }
 .info { min-width: 0; flex: 1; }
-.name { font-size: 13px; color: #6554a4; font-weight: bold; }
-.title {
-  font-size: 15px;
+.status {
+  font-size: 12px;
   font-weight: bold;
-  margin: 7px 0;
+  margin-bottom: 5px;
+}
+.title {
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 1.5;
   overflow-wrap: anywhere;
 }
-.date { font-size: 12px; color: #666; }
-a { color: inherit; text-decoration: none; }
+.date { font-size: 12px; color: #777; margin-top: 8px; }
+.watch {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 7px 10px;
+  border-radius: 8px;
+  background: #eee9fa;
+  color: #4f3c83;
+  font-size: 12px;
+}
 .message {
+  padding: 14px;
   background: white;
   border-radius: 12px;
-  padding: 16px;
+  color: #777;
+  font-size: 13px;
 }
-.status { font-size: 12px; font-weight: bold; }
 </style>
 </head>
 <body>
-<h1>📺 Oriens 配信スケジュール</h1>
-<p class="note">配信情報を自動で読み込むよ！</p>
-<p class="note" id="updated"></p>
+<h1>📺 Oriens 配信まとめ</h1>
+<p class="note">4人の配信をメンバーごとにチェック！</p>
+<p class="note" id="updated">読み込み中…</p>
+
+<nav>
+  <a href="#mana">緋八マナ</a>
+  <a href="#tetsu">佐伯イッテツ</a>
+  <a href="#rito">宇佐美リト</a>
+  <a href="#wen">赤城ウェン</a>
+</nav>
+
 <main id="schedule">
-  <p class="message">読み込み中…</p>
+  <p class="message">配信情報を読み込み中…</p>
 </main>
 
 <script>
+const members = [
+  { name: "緋八マナ", id: "mana" },
+  { name: "佐伯イッテツ", id: "tetsu" },
+  { name: "宇佐美リト", id: "rito" },
+  { name: "赤城ウェン", id: "wen" }
+];
+
+function escapeHTML(value) {
+  return String(value ?? "").replace(/[&<>"']/g, c => ({
+    "&": "&amp;", "<": "&lt;", ">": "&gt;",
+    '"': "&quot;", "'": "&#39;"
+  })[c]);
+}
+
+function formatDate(value) {
+  const date = new Date(value);
+  if (Number.isNaN(date.getTime())) return "日時不明";
+  return new Intl.DateTimeFormat("ja-JP", {
+    year: "numeric",
+    month: "numeric",
+    day: "numeric",
+    weekday: "short",
+    hour: "2-digit",
+    minute: "2-digit",
+    timeZone: "Asia/Tokyo"
+  }).format(date);
+}
+
+function makeCard(item) {
+  const status = item.status === "live"
+    ? "🔴 配信中"
+    : item.status === "upcoming"
+    ? "🗓️ 配信予定"
+    : "📼 過去の配信";
+
+  return `
+    <article class="stream">
+      ${item.thumbnail
+        ? `<a href="${escapeHTML(item.url)}" target="_blank" rel="noopener">
+             <img src="${escapeHTML(item.thumbnail)}" alt="">
+           </a>`
+        : ""}
+      <div class="info">
+        <div class="status">${status}</div>
+        <div class="title">
+          <a href="${escapeHTML(item.url)}" target="_blank" rel="noopener">
+            ${escapeHTML(item.title)}
+          </a>
+        </div>
+        <div class="date">🗓 ${formatDate(item.scheduledAt)}</div>
+        <a class="watch" href="${escapeHTML(item.url)}"
+           target="_blank" rel="noopener">▶ YouTubeで見る</a>
+      </div>
+    </article>`;
+}
+
 async function loadSchedule() {
   const area = document.getElementById("schedule");
 
   try {
-    const response = await fetch("./schedule.json?time=" + Date.now());
-    if (!response.ok) throw new Error("schedule.jsonを読み込めません");
+    const response = await fetch("./schedule.json?t=" + Date.now());
+    if (!response.ok) throw new Error("読み込み失敗");
 
     const data = await response.json();
-    if (!Array.isArray(data)) throw new Error("データ形式が違います");
-
     const unique = new Map();
+
     for (const item of data) {
-      if (item.url && !unique.has(item.url)) unique.set(item.url, item);
+      if (item.url && !unique.has(item.url)) {
+        unique.set(item.url, item);
+      }
     }
 
     const items = [...unique.values()];
-    const live = items.filter(x => x.status === "live");
-    const upcoming = items.filter(x => x.status === "upcoming")
-      .sort((a, b) => new Date(a.scheduledAt) - new Date(b.scheduledAt));
-    const past = items.filter(x => x.status === "past")
-      .sort((a, b) => new Date(b.scheduledAt) - new Date(a.scheduledAt));
 
-    function escapeHTML(value) {
-      return String(value ?? "").replace(/[&<>"']/g, c => ({
-        "&": "&amp;", "<": "&lt;", ">": "&gt;",
-        '"': "&quot;", "'": "&#39;"
-      })[c]);
-    }
+    area.innerHTML = members.map(member => {
+      const list = items
+        .filter(item => item.name === member.name)
+        .sort((a, b) => {
+          const aDate = new Date(a.scheduledAt).getTime() || 0;
+          const bDate = new Date(b.scheduledAt).getTime() || 0;
+          return bDate - aDate;
+        });
 
-    function card(item) {
-      const date = new Date(item.scheduledAt);
-      const dateText = Number.isNaN(date.getTime()) ? "日時不明" :
-        new Intl.DateTimeFormat("ja-JP", {
-          year: "numeric", month: "numeric", day: "numeric",
-          weekday: "short", hour: "2-digit", minute: "2-digit",
-          timeZone: "Asia/Tokyo"
-        }).format(date);
-
-      const label = item.status === "live" ? "🔴 配信中" :
-        item.status === "upcoming" ? "🗓️ 配信予定" : "📼 過去の配信";
-
-      return `<article class="stream">
-        ${item.thumbnail ? `<a href="${escapeHTML(item.url)}" target="_blank" rel="noopener"><img src="${escapeHTML(item.thumbnail)}" alt=""></a>` : ""}
-        <div class="info">
-          <div class="name">${escapeHTML(item.name)}</div>
-          <div class="status">${label}</div>
-          <div class="title"><a href="${escapeHTML(item.url)}" target="_blank" rel="noopener">${escapeHTML(item.title)}</a></div>
-          <div class="date">🗓 ${dateText}</div>
-          <p><a href="${escapeHTML(item.url)}" target="_blank" rel="noopener">▶ YouTubeで見る</a></p>
-        </div>
-      </article>`;
-    }
-
-    function section(title, list) {
-      return `<section><h2>${title}（${list.length}）</h2>${
-        list.length ? list.map(card).join("") :
-        '<p class="message">現在、表示できる配信はありません。</p>'
-      }</section>`;
-    }
-
-    area.innerHTML =
-      section("🔴 配信中", live) +
-      section("🗓️ 配信予定", upcoming) +
-      section("📼 過去の配信", past);
+      return `
+        <section class="member" id="${member.id}">
+          <div class="member-heading">
+            ${member.name} <span>（${list.length}件）</span>
+          </div>
+          <div class="streams">
+            ${list.length
+              ? list.map(makeCard).join("")
+              : '<p class="message">表示できる配信はありません。</p>'}
+          </div>
+        </section>`;
+    }).join("");
 
     document.getElementById("updated").textContent =
-      "ページ確認時刻：" + new Date().toLocaleString("ja-JP");
+      "ページ更新確認：" + new Date().toLocaleString("ja-JP");
   } catch (error) {
-    area.innerHTML = '<p class="message">読み込みに失敗しました。少し待って再読み込みしてね。</p>';
+    area.innerHTML =
+      '<p class="message">読み込みに失敗しました。ページを再読み込みしてね。</p>';
   }
 }
 
