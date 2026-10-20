@@ -11,6 +11,7 @@ CHANNELS = {
     "赤城ウェン": "https://www.youtube.com/@akagi_wen/streams",
 }
 
+
 def get_date(video):
     for key in ("release_timestamp", "scheduled_start_time", "timestamp"):
         value = video.get(key)
@@ -36,8 +37,6 @@ def get_date(video):
 
 
 def get_streams(name, channel_url):
-    items = []
-
     result = subprocess.run(
         [
             "yt-dlp",
@@ -54,6 +53,7 @@ def get_streams(name, channel_url):
     )
 
     data = json.loads(result.stdout)
+    items = []
 
     for video in data.get("entries") or []:
         if not video:
@@ -66,13 +66,17 @@ def get_streams(name, channel_url):
         date_value = get_date(video)
         live_status = video.get("live_status")
 
+        if not date_value:
+            print("日時を取得できずスキップ:", name, video_id)
+            continue
+
         if live_status == "is_live":
             status = "live"
         elif live_status == "is_upcoming":
             status = "upcoming"
         elif live_status in ("was_live", "not_live"):
             status = "past"
-        elif date_value:
+        else:
             date = datetime.fromisoformat(
                 date_value.replace("Z", "+00:00")
             )
@@ -81,13 +85,6 @@ def get_streams(name, channel_url):
                 if date > datetime.now(timezone.utc)
                 else "past"
             )
-        else:
-            print("日時を取得できずスキップ:", name, video_id)
-            continue
-
-        if not date_value:
-            print("日時を取得できずスキップ:", name, video_id)
-            continue
 
         thumbnails = video.get("thumbnails") or []
         thumbnail = (
@@ -120,16 +117,18 @@ def main():
             failures.append(name)
             print("取得失敗:", name, str(error))
 
-    unique = {item["videoId"]: item for item in items}
-    items = list(unique.values())
-    items.sort(key=lambda item: item["scheduledAt"], reverse=True)
+            if isinstance(error, subprocess.CalledProcessError):
+                print("詳しい原因:", error.stderr or "詳細なし")
 
-    # 一部でも失敗、または0件なら既存データを上書きしない
     if failures:
         raise RuntimeError(
             "取得に失敗したチャンネルがあります。既存データは保存しません: "
             + ", ".join(failures)
         )
+
+    unique = {item["videoId"]: item for item in items}
+    items = list(unique.values())
+    items.sort(key=lambda item: item["scheduledAt"], reverse=True)
 
     if not items:
         raise RuntimeError(
