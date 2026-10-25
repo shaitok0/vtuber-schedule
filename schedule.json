@@ -1,12 +1,12 @@
 [
   {
-    "name": "宇佐美リト",
-    "title": "【SuperBunnyMan】人とやる初見バニーマンをメロコさんと【宇佐美リト/にじさんじ】",
-    "videoId": "S7oy3ztyDIs",
-    "url": "https://www.youtube.com/watch?v=S7oy3ztyDIs",
-    "thumbnail": "https://i.ytimg.com/vi/S7oy3ztyDIs/hqdefault.jpg?v=6add8d2e",
-    "scheduledAt": "2026-10-25T12:00:00Z",
-    "status": "upcoming"
+    "name": "赤城ウェン",
+    "title": "【japanese ramen simulator】「俺の一杯」人生をラーメンに捧げた男の実店舗ドキュメンタリー【赤城ウェン/にじさんじ】",
+    "videoId": "hef46D3Gt2A",
+    "url": "https://www.youtube.com/watch?v=hef46D3Gt2A",
+    "thumbnail": "https://i.ytimg.com/vi/hef46D3Gt2A/hqdefault.jpg?v=6addcdd0",
+    "scheduledAt": "2026-10-25T11:38:04Z",
+    "status": "live"
   },
   {
     "name": "佐伯イッテツ",
@@ -15,7 +15,7 @@
     "url": "https://www.youtube.com/watch?v=q-_14wrt41U",
     "thumbnail": "https://i.ytimg.com/vi/q-_14wrt41U/hqdefault.jpg?v=6add9e52",
     "scheduledAt": "2026-10-25T06:29:50Z",
-    "status": "live"
+    "status": "past"
   },
   {
     "name": "緋八マナ",
@@ -1924,5 +1924,14 @@
     "thumbnail": "https://i.ytimg.com/vi/3Wk7gl8EFAE/hqdefault.jpg",
     "scheduledAt": "2026-07-27T07:01:22Z",
     "status": "past"
+  },
+  {
+    "name": "宇佐美リト",
+    "title": "【SuperBunnyMan】人とやる初見バニーマンをメロコさんと【宇佐美リト/にじさんじ】",
+    "videoId": "S7oy3ztyDIs",
+    "url": "https://www.youtube.com/watch?v=S7oy3ztyDIs",
+    "thumbnail": "https://i.ytimg.com/vi/S7oy3ztyDIs/hqdefault.jpg",
+    "scheduledAt": null,
+    "status": "upcoming"
   }
 ]
