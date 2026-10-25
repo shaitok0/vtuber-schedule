@@ -1,5 +1,14 @@
 [
   {
+    "name": "宇佐美リト",
+    "title": "【SuperBunnyMan】人とやる初見バニーマンをメロコさんと【宇佐美リト/にじさんじ】",
+    "videoId": "S7oy3ztyDIs",
+    "url": "https://www.youtube.com/watch?v=S7oy3ztyDIs",
+    "thumbnail": "https://i.ytimg.com/vi/S7oy3ztyDIs/hqdefault.jpg?v=6add8d2e",
+    "scheduledAt": "2026-10-25T12:05:16Z",
+    "status": "live"
+  },
+  {
     "name": "赤城ウェン",
     "title": "【japanese ramen simulator】「俺の一杯」人生をラーメンに捧げた男の実店舗ドキュメンタリー【赤城ウェン/にじさんじ】",
     "videoId": "hef46D3Gt2A",
@@ -13,7 +22,7 @@
     "title": "【ほぼ初見part05】ヌケニンを抱きしめたらどうなる？【にじさんじ／佐伯イッテツ】",
     "videoId": "q-_14wrt41U",
     "url": "https://www.youtube.com/watch?v=q-_14wrt41U",
-    "thumbnail": "https://i.ytimg.com/vi/q-_14wrt41U/hqdefault.jpg?v=6add9e52",
+    "thumbnail": "https://i.ytimg.com/vi/q-_14wrt41U/hqdefault.jpg",
     "scheduledAt": "2026-10-25T06:29:50Z",
     "status": "past"
   },
@@ -1924,14 +1933,5 @@
     "thumbnail": "https://i.ytimg.com/vi/3Wk7gl8EFAE/hqdefault.jpg",
     "scheduledAt": "2026-07-27T07:01:22Z",
     "status": "past"
-  },
-  {
-    "name": "宇佐美リト",
-    "title": "【SuperBunnyMan】人とやる初見バニーマンをメロコさんと【宇佐美リト/にじさんじ】",
-    "videoId": "S7oy3ztyDIs",
-    "url": "https://www.youtube.com/watch?v=S7oy3ztyDIs",
-    "thumbnail": "https://i.ytimg.com/vi/S7oy3ztyDIs/hqdefault.jpg",
-    "scheduledAt": null,
-    "status": "upcoming"
   }
 ]
