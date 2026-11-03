@@ -9,13 +9,31 @@
     "status": "upcoming"
   },
   {
+    "name": "緋八マナ",
+    "title": "【スプラトゥーン3】てあむ20 ~覚醒編~【にじさんじ / 緋八マナ】",
+    "videoId": "epNhgyfgDbA",
+    "url": "https://www.youtube.com/watch?v=epNhgyfgDbA",
+    "thumbnail": "https://i.ytimg.com/vi/epNhgyfgDbA/hqdefault.jpg?v=6ae9c370",
+    "scheduledAt": "2026-11-03T12:00:00Z",
+    "status": "upcoming"
+  },
+  {
+    "name": "宇佐美リト",
+    "title": "【3秒ばなな】3秒ルール【宇佐美リト/にじさんじ】",
+    "videoId": "hz3-WcgmFpo",
+    "url": "https://www.youtube.com/watch?v=hz3-WcgmFpo",
+    "thumbnail": "https://i.ytimg.com/vi/hz3-WcgmFpo/hqdefault.jpg?v=6ae9c4db",
+    "scheduledAt": "2026-11-03T11:45:00Z",
+    "status": "upcoming"
+  },
+  {
     "name": "佐伯イッテツ",
     "title": "【雑談】酒が弱い奴でも楽しめる、此処は居水屋【にじさんじ／佐伯イッテツ】",
     "videoId": "dWzErNkh8Ns",
     "url": "https://www.youtube.com/watch?v=dWzErNkh8Ns",
-    "thumbnail": "https://i.ytimg.com/vi/dWzErNkh8Ns/hqdefault.jpg?v=6ae9a0a2",
+    "thumbnail": "https://i.ytimg.com/vi/dWzErNkh8Ns/hqdefault.jpg",
     "scheduledAt": "2026-11-03T10:00:11Z",
-    "status": "live"
+    "status": "past"
   },
   {
     "name": "赤城ウェン",
