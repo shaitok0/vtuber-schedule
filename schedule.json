@@ -1,12 +1,12 @@
 [
   {
-    "name": "佐伯イッテツ",
-    "title": "【#にじユーフィット】豪華ゲスト？をお呼びして商品紹介します！【にじさんじ／佐伯イッテツ】",
-    "videoId": "5a65MlMYbnY",
-    "url": "https://www.youtube.com/watch?v=5a65MlMYbnY",
-    "thumbnail": "https://i.ytimg.com/vi/5a65MlMYbnY/hqdefault.jpg?v=6ae4127f",
-    "scheduledAt": "2026-11-05T12:00:00Z",
-    "status": "upcoming"
+    "name": "宇佐美リト",
+    "title": "【ONEPIECE 海のごちそうレストラン】いつもクソお世話になっております。 #4【宇佐美リト/にじさんじ】",
+    "videoId": "vXxCL8UTiKU",
+    "url": "https://www.youtube.com/watch?v=vXxCL8UTiKU",
+    "thumbnail": "https://i.ytimg.com/vi/vXxCL8UTiKU/hqdefault.jpg?v=6aec7b96",
+    "scheduledAt": "2026-11-05T13:01:01Z",
+    "status": "live"
   },
   {
     "name": "緋八マナ",
@@ -14,8 +14,17 @@
     "videoId": "v5I4j1rdQuw",
     "url": "https://www.youtube.com/watch?v=v5I4j1rdQuw",
     "thumbnail": "https://i.ytimg.com/vi/v5I4j1rdQuw/hqdefault.jpg?v=6aec57dd",
-    "scheduledAt": "2026-11-05T12:00:00Z",
-    "status": "upcoming"
+    "scheduledAt": "2026-11-05T12:03:19Z",
+    "status": "live"
+  },
+  {
+    "name": "佐伯イッテツ",
+    "title": "【#にじユーフィット】豪華ゲスト？をお呼びして商品紹介します！【にじさんじ／佐伯イッテツ】",
+    "videoId": "5a65MlMYbnY",
+    "url": "https://www.youtube.com/watch?v=5a65MlMYbnY",
+    "thumbnail": "https://i.ytimg.com/vi/5a65MlMYbnY/hqdefault.jpg?v=6ae4127f",
+    "scheduledAt": "2026-11-05T11:59:48Z",
+    "status": "live"
   },
   {
     "name": "赤城ウェン",
