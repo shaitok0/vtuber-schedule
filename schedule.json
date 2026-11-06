@@ -1,12 +1,21 @@
 [
   {
+    "name": "緋八マナ",
+    "title": "【スプラトゥーン3】本番！勝とう！【にじさんじ / 緋八マナ】#ただイカWIN",
+    "videoId": "fRCPg45p8Xg",
+    "url": "https://www.youtube.com/watch?v=fRCPg45p8Xg",
+    "thumbnail": "https://i.ytimg.com/vi/fRCPg45p8Xg/hqdefault.jpg?v=6aedf24a",
+    "scheduledAt": "2026-11-07T09:00:00Z",
+    "status": "upcoming"
+  },
+  {
     "name": "赤城ウェン",
     "title": "【スプラ3】その３大会前日のチーム１１とは！対抗戦いくぞ！ #にじイカ祭り2026 【にじさんじ / 赤城ウェン】",
     "videoId": "AXNU3rVskEA",
     "url": "https://www.youtube.com/watch?v=AXNU3rVskEA",
     "thumbnail": "https://i.ytimg.com/vi/AXNU3rVskEA/hqdefault.jpg?v=6aedddfa",
     "scheduledAt": "2026-11-06T14:05:17Z",
-    "status": "live"
+    "status": "past"
   },
   {
     "name": "赤城ウェン",
@@ -24,7 +33,7 @@
     "url": "https://www.youtube.com/watch?v=KmVbobuUWtA",
     "thumbnail": "https://i.ytimg.com/vi/KmVbobuUWtA/hqdefault.jpg?v=6aed31f8",
     "scheduledAt": "2026-11-06T12:03:50Z",
-    "status": "live"
+    "status": "past"
   },
   {
     "name": "宇佐美リト",
