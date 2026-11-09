@@ -1,12 +1,21 @@
 [
   {
+    "name": "赤城ウェン",
+    "title": "【R.E.P.O.】大型アプデがきたの！？【赤城ウェン/にじさんじ】",
+    "videoId": "j3foZO_NL8o",
+    "url": "https://www.youtube.com/watch?v=j3foZO_NL8o",
+    "thumbnail": "https://i.ytimg.com/vi/j3foZO_NL8o/hqdefault.jpg?v=6af1ce70",
+    "scheduledAt": "2026-11-09T14:00:00Z",
+    "status": "upcoming"
+  },
+  {
     "name": "緋八マナ",
     "title": "【雑談】久々な気がする雑談【にじさんじ/緋八マナ】",
     "videoId": "t6XhIty8Cp8",
     "url": "https://www.youtube.com/watch?v=t6XhIty8Cp8",
     "thumbnail": "https://i.ytimg.com/vi/t6XhIty8Cp8/hqdefault.jpg?v=6af16c6b",
-    "scheduledAt": "2026-11-09T13:00:00Z",
-    "status": "upcoming"
+    "scheduledAt": "2026-11-09T13:03:22Z",
+    "status": "live"
   },
   {
     "name": "宇佐美リト",
@@ -14,8 +23,8 @@
     "videoId": "DG3BbWP1GKE",
     "url": "https://www.youtube.com/watch?v=DG3BbWP1GKE",
     "thumbnail": "https://i.ytimg.com/vi/DG3BbWP1GKE/hqdefault.jpg?v=6af1ae5a",
-    "scheduledAt": "2026-11-09T13:00:00Z",
-    "status": "upcoming"
+    "scheduledAt": "2026-11-09T13:00:19Z",
+    "status": "live"
   },
   {
     "name": "佐伯イッテツ",
