@@ -1,12 +1,21 @@
 [
   {
+    "name": "赤城ウェン",
+    "title": "【突然の朝枠】１１月も急におはよう！オハ城2026【赤城ウェン/にじさんじ】",
+    "videoId": "qOSRMA2QHv4",
+    "url": "https://www.youtube.com/watch?v=qOSRMA2QHv4",
+    "thumbnail": "https://i.ytimg.com/vi/qOSRMA2QHv4/hqdefault.jpg?v=6af39c1e",
+    "scheduledAt": "2026-11-10T22:55:00Z",
+    "status": "upcoming"
+  },
+  {
     "name": "佐伯イッテツ",
     "title": "べしべし【にじさんじ／佐伯イッテツ】",
     "videoId": "L-g3RJ_ovwA",
     "url": "https://www.youtube.com/watch?v=L-g3RJ_ovwA",
-    "thumbnail": "https://i.ytimg.com/vi/L-g3RJ_ovwA/hqdefault.jpg?v=6af37dcb",
+    "thumbnail": "https://i.ytimg.com/vi/L-g3RJ_ovwA/hqdefault.jpg",
     "scheduledAt": "2026-11-10T20:30:51Z",
-    "status": "live"
+    "status": "past"
   },
   {
     "name": "赤城ウェン",
