@@ -1,30 +1,39 @@
 [
   {
-    "name": "緋八マナ",
-    "title": "【#にじペスロ】塗って剥がしてぷるツヤに…⁉【にじさんじ/緋八マナ＆レイン・パターソン】",
-    "videoId": "qqhGL2RWNYc",
-    "url": "https://www.youtube.com/watch?v=qqhGL2RWNYc",
-    "thumbnail": "https://i.ytimg.com/vi/qqhGL2RWNYc/hqdefault.jpg?v=6afa91e3",
-    "scheduledAt": "2026-11-23T10:00:00Z",
-    "status": "upcoming"
-  },
-  {
-    "name": "緋八マナ",
-    "title": "【歌枠】新衣装お披露目させていただきます ※告知あり #緋八マナ新衣装歌枠【にじさんじ/緋八マナ】",
-    "videoId": "hAhYNRsoleQ",
-    "url": "https://www.youtube.com/watch?v=hAhYNRsoleQ",
-    "thumbnail": "https://i.ytimg.com/vi/hAhYNRsoleQ/hqdefault.jpg?v=6afabd5e",
-    "scheduledAt": "2026-11-20T13:00:00Z",
-    "status": "upcoming"
-  },
-  {
     "name": "宇佐美リト",
-    "title": "【#にじエルリス】ビタミンしぃしぃをご紹介！？【宇佐美リト/にじさんじ】",
-    "videoId": "uGHDueafh4o",
-    "url": "https://www.youtube.com/watch?v=uGHDueafh4o",
-    "thumbnail": "https://i.ytimg.com/vi/uGHDueafh4o/hqdefault.jpg?v=6af2ea00",
-    "scheduledAt": "2026-11-18T11:00:00Z",
-    "status": "upcoming"
+    "title": "【LoL】デュオランクをカゲツと【宇佐美リト/にじさんじ】",
+    "videoId": "7qDyMGj-sfs",
+    "url": "https://www.youtube.com/watch?v=7qDyMGj-sfs",
+    "thumbnail": "https://i.ytimg.com/vi/7qDyMGj-sfs/hqdefault.jpg?v=6afda1ca",
+    "scheduledAt": "2026-11-18T13:12:38Z",
+    "status": "live"
+  },
+  {
+    "name": "緋八マナ",
+    "title": "【呪ショッピング】セール来たからちょっと怪しいサイトで買い物する！【にじさんじ/緋八マナ】",
+    "videoId": "0RjP-8zY0xQ",
+    "url": "https://www.youtube.com/watch?v=0RjP-8zY0xQ",
+    "thumbnail": "https://i.ytimg.com/vi/0RjP-8zY0xQ/hqdefault.jpg",
+    "scheduledAt": "2026-11-18T13:03:40Z",
+    "status": "past"
+  },
+  {
+    "name": "赤城ウェン",
+    "title": "【雀魂】号泣かも、地獄企画！振り込んだ回数分を禁酒日にする麻雀！【赤城ウェン/にじさんじ】",
+    "videoId": "Winx6vVu7Uc",
+    "url": "https://www.youtube.com/watch?v=Winx6vVu7Uc",
+    "thumbnail": "https://i.ytimg.com/vi/Winx6vVu7Uc/hqdefault.jpg",
+    "scheduledAt": "2026-11-18T12:46:12Z",
+    "status": "past"
+  },
+  {
+    "name": "佐伯イッテツ",
+    "title": "【星のカービィ 夢の泉の物語】ペポポポポポポポ【にじさんじ／佐伯イッテツ】",
+    "videoId": "RN2y60S7P-A",
+    "url": "https://www.youtube.com/watch?v=RN2y60S7P-A",
+    "thumbnail": "https://i.ytimg.com/vi/RN2y60S7P-A/hqdefault.jpg",
+    "scheduledAt": "2026-11-18T09:59:40Z",
+    "status": "past"
   },
   {
     "name": "緋八マナ",
@@ -2680,5 +2689,32 @@
     "thumbnail": "https://i.ytimg.com/vi/3Wk7gl8EFAE/hqdefault.jpg",
     "scheduledAt": "2026-07-27T07:01:22Z",
     "status": "past"
+  },
+  {
+    "name": "緋八マナ",
+    "title": "【#にじペスロ】塗って剥がしてぷるツヤに…⁉【にじさんじ/緋八マナ＆レイン・パターソン】",
+    "videoId": "qqhGL2RWNYc",
+    "url": "https://www.youtube.com/watch?v=qqhGL2RWNYc",
+    "thumbnail": "https://i.ytimg.com/vi/qqhGL2RWNYc/hqdefault.jpg",
+    "scheduledAt": null,
+    "status": "upcoming"
+  },
+  {
+    "name": "緋八マナ",
+    "title": "【歌枠】新衣装お披露目させていただきます ※告知あり #緋八マナ新衣装歌枠【にじさんじ/緋八マナ】",
+    "videoId": "hAhYNRsoleQ",
+    "url": "https://www.youtube.com/watch?v=hAhYNRsoleQ",
+    "thumbnail": "https://i.ytimg.com/vi/hAhYNRsoleQ/hqdefault.jpg",
+    "scheduledAt": null,
+    "status": "upcoming"
+  },
+  {
+    "name": "宇佐美リト",
+    "title": "【#にじエルリス】ビタミンしぃしぃをご紹介！？【宇佐美リト/にじさんじ】",
+    "videoId": "uGHDueafh4o",
+    "url": "https://www.youtube.com/watch?v=uGHDueafh4o",
+    "thumbnail": "https://i.ytimg.com/vi/uGHDueafh4o/hqdefault.jpg",
+    "scheduledAt": null,
+    "status": "upcoming"
   }
 ]
