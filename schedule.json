@@ -1,21 +1,48 @@
 [
   {
     "name": "緋八マナ",
-    "title": "【#にじペスロ】塗って剥がしてぷるツヤに…⁉【にじさんじ/緋八マナ＆レイン・パターソン】",
-    "videoId": "qqhGL2RWNYc",
-    "url": "https://www.youtube.com/watch?v=qqhGL2RWNYc",
-    "thumbnail": "https://i.ytimg.com/vi/qqhGL2RWNYc/hqdefault.jpg?v=6afa91e3",
-    "scheduledAt": "2026-11-23T10:00:00Z",
-    "status": "upcoming"
-  },
-  {
-    "name": "緋八マナ",
     "title": "【歌枠】新衣装お披露目させていただきます ※告知あり #緋八マナ新衣装歌枠【にじさんじ/緋八マナ】",
     "videoId": "hAhYNRsoleQ",
     "url": "https://www.youtube.com/watch?v=hAhYNRsoleQ",
     "thumbnail": "https://i.ytimg.com/vi/hAhYNRsoleQ/hqdefault.jpg?v=6afabd5e",
     "scheduledAt": "2026-11-20T13:00:00Z",
     "status": "upcoming"
+  },
+  {
+    "name": "緋八マナ",
+    "title": "【#にじペスロ】塗って剥がしてぷるツヤに…⁉【にじさんじ/緋八マナ＆レイン・パターソン】",
+    "videoId": "qqhGL2RWNYc",
+    "url": "https://www.youtube.com/watch?v=qqhGL2RWNYc",
+    "thumbnail": "https://i.ytimg.com/vi/qqhGL2RWNYc/hqdefault.jpg?v=6afa91e3",
+    "scheduledAt": "2026-11-20T10:30:00Z",
+    "status": "upcoming"
+  },
+  {
+    "name": "宇佐美リト",
+    "title": "【ONEPIECE 海のごちそうレストラン】いつもクソお世話になっております。 #6【宇佐美リト/にじさんじ】",
+    "videoId": "Pa2CtOD_alI",
+    "url": "https://www.youtube.com/watch?v=Pa2CtOD_alI",
+    "thumbnail": "https://i.ytimg.com/vi/Pa2CtOD_alI/hqdefault.jpg?v=6aff16c5",
+    "scheduledAt": "2026-11-19T15:35:01Z",
+    "status": "live"
+  },
+  {
+    "name": "佐伯イッテツ",
+    "title": "【MIMESISコラボ】みんなであそんでみよう！【にじさんじ／佐伯イッテツ/樋口楓/九里詠太/御子神琴音】",
+    "videoId": "34k3wLV95lw",
+    "url": "https://www.youtube.com/watch?v=34k3wLV95lw",
+    "thumbnail": "https://i.ytimg.com/vi/34k3wLV95lw/hqdefault.jpg",
+    "scheduledAt": "2026-11-19T11:00:32Z",
+    "status": "past"
+  },
+  {
+    "name": "赤城ウェン",
+    "title": "【恋してみた】多摩川で、恋...したい♡ with 伊波ライ、佐伯イッテツ【赤城ウェン/にじさんじ】",
+    "videoId": "4bZTMsk_e6U",
+    "url": "https://www.youtube.com/watch?v=4bZTMsk_e6U",
+    "thumbnail": "https://i.ytimg.com/vi/4bZTMsk_e6U/hqdefault.jpg",
+    "scheduledAt": "2026-11-19T09:45:30Z",
+    "status": "past"
   },
   {
     "name": "宇佐美リト",
