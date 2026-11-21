@@ -162,10 +162,6 @@ def main():
 
     now = datetime.now(timezone.utc)
 
-    # 15分ごとの実行だけ処理する
-    if now.minute % 15 >= 5:
-        print("次の確認時間まで待機します")
-        return
 
     old_items = []
     if OUTPUT.exists():
