@@ -27,15 +27,6 @@
     "status": "past"
   },
   {
-    "name": "赤城ウェン",
-    "title": "【雀魂】大会前日！ #にじさんじLリーグ レッドガーネット！【赤城ウェン/にじさんじ】",
-    "videoId": "NE_AHMyV-DE",
-    "url": "https://www.youtube.com/watch?v=NE_AHMyV-DE",
-    "thumbnail": "https://i.ytimg.com/vi/NE_AHMyV-DE/hqdefault.jpg?v=6b0035bc",
-    "scheduledAt": "2026-11-20T13:10:00Z",
-    "status": "upcoming"
-  },
-  {
     "name": "宇佐美リト",
     "title": "【Apex Legends】大会に向けて顔を合わせます。 メイカさん 一ノ瀬さん【宇佐美リト/にじさんじ】",
     "videoId": "ZZ7ZTwtM1nA",
@@ -1087,5 +1078,14 @@
     "thumbnail": "https://i.ytimg.com/vi/w2GZFOcxlZA/hqdefault.jpg",
     "scheduledAt": "2026-09-30T13:26:35Z",
     "status": "past"
+  },
+  {
+    "name": "赤城ウェン",
+    "title": "【雀魂】後半戦！大会本番！ #にじさんじLリーグ レッドガーネットWIN！【赤城ウェン/にじさんじ】",
+    "videoId": "HV2Qjt9RZjc",
+    "url": "https://www.youtube.com/watch?v=HV2Qjt9RZjc",
+    "thumbnail": "https://i.ytimg.com/vi/HV2Qjt9RZjc/hqdefault.jpg",
+    "scheduledAt": null,
+    "status": "live"
   }
 ]
