@@ -909,15 +909,6 @@
     "status": "past"
   },
   {
-    "name": "緋八マナ",
-    "title": "【朝活雑談】あと2か月でクリスマス【ニチアサ！緋八マン！】【にじさんじ/緋八マナ】",
-    "videoId": "1KUuKXpkvZ0",
-    "url": "https://www.youtube.com/watch?v=1KUuKXpkvZ0",
-    "thumbnail": "https://i.ytimg.com/vi/1KUuKXpkvZ0/hqdefault.jpg",
-    "scheduledAt": "2026-10-24T21:59:54Z",
-    "status": "past"
-  },
-  {
     "name": "宇佐美リト",
     "title": "【LoL】デュオランクをカゲツと【宇佐美リト/にじさんじ】",
     "videoId": "wQlOBGQDAm8",
@@ -978,15 +969,6 @@
     "url": "https://www.youtube.com/watch?v=5IVhh_uxZlE",
     "thumbnail": "https://i.ytimg.com/vi/5IVhh_uxZlE/hqdefault.jpg",
     "scheduledAt": "2026-10-19T12:04:52Z",
-    "status": "past"
-  },
-  {
-    "name": "宇佐美リト",
-    "title": "【デス桃太郎】おっかねえ昔話【宇佐美リト/にじさんじ】",
-    "videoId": "vRUeCordebI",
-    "url": "https://www.youtube.com/watch?v=vRUeCordebI",
-    "thumbnail": "https://i.ytimg.com/vi/vRUeCordebI/hqdefault.jpg",
-    "scheduledAt": "2026-10-19T11:01:24Z",
     "status": "past"
   },
   {
@@ -1071,12 +1053,12 @@
     "status": "past"
   },
   {
-    "name": "佐伯イッテツ",
-    "title": "【Dressmaker】帽子屋超えて仕立て屋【にじさんじ／佐伯イッテツ】",
-    "videoId": "3Gtd1W33CBM",
-    "url": "https://www.youtube.com/watch?v=3Gtd1W33CBM",
-    "thumbnail": "https://i.ytimg.com/vi/3Gtd1W33CBM/hqdefault.jpg",
-    "scheduledAt": "2026-10-03T10:00:11Z",
-    "status": "past"
+    "name": "宇佐美リト",
+    "title": "【Apex Legends】#ぶいすぽGG スクリムだ！！！ メイカさん 一ノ瀬さん【宇佐美リト/にじさんじ】",
+    "videoId": "KrZSgS8Ca6c",
+    "url": "https://www.youtube.com/watch?v=KrZSgS8Ca6c",
+    "thumbnail": "https://i.ytimg.com/vi/KrZSgS8Ca6c/hqdefault.jpg",
+    "scheduledAt": null,
+    "status": "live"
   }
 ]
