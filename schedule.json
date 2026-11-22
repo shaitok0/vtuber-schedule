@@ -1,5 +1,32 @@
 [
   {
+    "name": "宇佐美リト",
+    "title": "【Apex Legends】#ぶいすぽGG スクリムだ！！！ メイカさん 一ノ瀬さん【宇佐美リト/にじさんじ】",
+    "videoId": "KrZSgS8Ca6c",
+    "url": "https://www.youtube.com/watch?v=KrZSgS8Ca6c",
+    "thumbnail": "https://i.ytimg.com/vi/KrZSgS8Ca6c/hqdefault.jpg",
+    "scheduledAt": "2026-11-22T10:37:47Z",
+    "status": "past"
+  },
+  {
+    "name": "佐伯イッテツ",
+    "title": "【AIドット絵バトル】帰って来たぜ…この戦場にヨォ【にじさんじ／佐伯イッテツ】",
+    "videoId": "ZsGRE-I7DPU",
+    "url": "https://www.youtube.com/watch?v=ZsGRE-I7DPU",
+    "thumbnail": "https://i.ytimg.com/vi/ZsGRE-I7DPU/hqdefault.jpg",
+    "scheduledAt": "2026-11-22T10:29:56Z",
+    "status": "past"
+  },
+  {
+    "name": "緋八マナ",
+    "title": "【APEX】大会直前顔合わせ！楽しくしゃべって勝つ！【にじさんじ/緋八マナ】",
+    "videoId": "IfXUfDTkA0Y",
+    "url": "https://www.youtube.com/watch?v=IfXUfDTkA0Y",
+    "thumbnail": "https://i.ytimg.com/vi/IfXUfDTkA0Y/hqdefault.jpg",
+    "scheduledAt": "2026-11-22T09:09:22Z",
+    "status": "past"
+  },
+  {
     "name": "緋八マナ",
     "title": "【朝活雑談】今夜はAPEXチーム顔合わせ！ ※二時間編【にじさんじ/緋八マナ】",
     "videoId": "v-WpGV15iGQ",
@@ -891,15 +918,6 @@
     "status": "past"
   },
   {
-    "name": "赤城ウェン",
-    "title": "【japanese ramen simulator】「俺の一杯」人生をラーメンに捧げた男の実店舗ドキュメンタリー【赤城ウェン/にじさんじ】",
-    "videoId": "hef46D3Gt2A",
-    "url": "https://www.youtube.com/watch?v=hef46D3Gt2A",
-    "thumbnail": "https://i.ytimg.com/vi/hef46D3Gt2A/hqdefault.jpg",
-    "scheduledAt": "2026-10-25T11:38:04Z",
-    "status": "past"
-  },
-  {
     "name": "佐伯イッテツ",
     "title": "【ほぼ初見part05】ヌケニンを抱きしめたらどうなる？【にじさんじ／佐伯イッテツ】",
     "videoId": "q-_14wrt41U",
@@ -1051,14 +1069,5 @@
     "thumbnail": "https://i.ytimg.com/vi/kR3E4vilWWM/hqdefault.jpg",
     "scheduledAt": "2026-10-03T12:59:17Z",
     "status": "past"
-  },
-  {
-    "name": "宇佐美リト",
-    "title": "【Apex Legends】#ぶいすぽGG スクリムだ！！！ メイカさん 一ノ瀬さん【宇佐美リト/にじさんじ】",
-    "videoId": "KrZSgS8Ca6c",
-    "url": "https://www.youtube.com/watch?v=KrZSgS8Ca6c",
-    "thumbnail": "https://i.ytimg.com/vi/KrZSgS8Ca6c/hqdefault.jpg",
-    "scheduledAt": null,
-    "status": "live"
   }
 ]
