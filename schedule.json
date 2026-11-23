@@ -1,5 +1,14 @@
 [
   {
+    "name": "佐伯イッテツ",
+    "title": "【Capcom Arcade 2nd Stadium】ヴァンパイアセイヴァーを知ろう!!【にじさんじ／佐伯イッテツ】",
+    "videoId": "nvAQ1T6JCrA",
+    "url": "https://www.youtube.com/watch?v=nvAQ1T6JCrA",
+    "thumbnail": "https://i.ytimg.com/vi/nvAQ1T6JCrA/hqdefault.jpg",
+    "scheduledAt": "2026-11-22T22:58:20Z",
+    "status": "past"
+  },
+  {
     "name": "宇佐美リト",
     "title": "【Apex Legends】#ぶいすぽGG スクリムだ！！！ メイカさん 一ノ瀬さん【宇佐美リト/にじさんじ】",
     "videoId": "KrZSgS8Ca6c",
@@ -873,30 +882,12 @@
     "status": "past"
   },
   {
-    "name": "赤城ウェン",
-    "title": "【japanese ramen simulator】「俺の一杯」実店舗ドキュメンタリーラーメン 第２話【赤城ウェン/にじさんじ】",
-    "videoId": "T9Gavxf4xo8",
-    "url": "https://www.youtube.com/watch?v=T9Gavxf4xo8",
-    "thumbnail": "https://i.ytimg.com/vi/T9Gavxf4xo8/hqdefault.jpg",
-    "scheduledAt": "2026-10-27T12:35:45Z",
-    "status": "past"
-  },
-  {
     "name": "佐伯イッテツ",
     "title": "【ほぼ初見part06】意気揚々？いや、いっき揚々！！【にじさんじ／佐伯イッテツ】",
     "videoId": "XjG-jX3EHwA",
     "url": "https://www.youtube.com/watch?v=XjG-jX3EHwA",
     "thumbnail": "https://i.ytimg.com/vi/XjG-jX3EHwA/hqdefault.jpg",
     "scheduledAt": "2026-10-27T11:29:58Z",
-    "status": "past"
-  },
-  {
-    "name": "緋八マナ",
-    "title": "ねいちぶな英語が飛び出る緋八マナ【にじさんじ/緋八マナ】",
-    "videoId": "ndovh81zryQ",
-    "url": "https://www.youtube.com/watch?v=ndovh81zryQ",
-    "thumbnail": "https://i.ytimg.com/vi/ndovh81zryQ/hqdefault.jpg",
-    "scheduledAt": "2026-10-26T14:49:50Z",
     "status": "past"
   },
   {
@@ -981,15 +972,6 @@
     "status": "past"
   },
   {
-    "name": "宇佐美リト",
-    "title": "【スト6】正義か悪か言ってみましょーーーーーー！！！！！【宇佐美リト/にじさんじ】",
-    "videoId": "5IVhh_uxZlE",
-    "url": "https://www.youtube.com/watch?v=5IVhh_uxZlE",
-    "thumbnail": "https://i.ytimg.com/vi/5IVhh_uxZlE/hqdefault.jpg",
-    "scheduledAt": "2026-10-19T12:04:52Z",
-    "status": "past"
-  },
-  {
     "name": "佐伯イッテツ",
     "title": "【ほぼ初見part01】真珠じゃなくてパール【にじさんじ／佐伯イッテツ】",
     "videoId": "Oh3ZwqxeGYI",
@@ -1067,6 +1049,15 @@
     "videoId": "yaUNK7xUQeQ",
     "url": "https://www.youtube.com/watch?v=yaUNK7xUQeQ",
     "thumbnail": "https://i.ytimg.com/vi/yaUNK7xUQeQ/hqdefault.jpg",
+    "scheduledAt": null,
+    "status": "live"
+  },
+  {
+    "name": "宇佐美リト",
+    "title": "【Apex Legends】#ぶいすぽGG 大会本番だ！！！ メイカさん 一ノ瀬さん【宇佐美リト/にじさんじ】",
+    "videoId": "6KK-dZb77tE",
+    "url": "https://www.youtube.com/watch?v=6KK-dZb77tE",
+    "thumbnail": "https://i.ytimg.com/vi/6KK-dZb77tE/hqdefault.jpg",
     "scheduledAt": null,
     "status": "live"
   }
