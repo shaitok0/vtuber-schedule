@@ -5,8 +5,17 @@
     "videoId": "K4t9_1YZNGs",
     "url": "https://www.youtube.com/watch?v=K4t9_1YZNGs",
     "thumbnail": "https://i.ytimg.com/vi/K4t9_1YZNGs/hqdefault.jpg?v=6b056bfb",
-    "scheduledAt": "2026-11-24T13:00:00Z",
-    "status": "upcoming"
+    "scheduledAt": "2026-11-24T13:03:37Z",
+    "status": "live"
+  },
+  {
+    "name": "宇佐美リト",
+    "title": "【ゼルダの伝説 時のオカリナ】Switch2版！ほぼ初見プレイ！ #4 【宇佐美リト/にじさんじ】",
+    "videoId": "N9PwpKTaXd8",
+    "url": "https://www.youtube.com/watch?v=N9PwpKTaXd8",
+    "thumbnail": "https://i.ytimg.com/vi/N9PwpKTaXd8/hqdefault.jpg?v=6b057ee3",
+    "scheduledAt": "2026-11-24T13:02:36Z",
+    "status": "live"
   },
   {
     "name": "赤城ウェン",
@@ -14,7 +23,16 @@
     "videoId": "zh2WF2eAIbg",
     "url": "https://www.youtube.com/watch?v=zh2WF2eAIbg",
     "thumbnail": "https://i.ytimg.com/vi/zh2WF2eAIbg/hqdefault.jpg?v=6b057f6a",
-    "scheduledAt": "2026-11-24T12:30:00Z",
+    "scheduledAt": "2026-11-24T12:31:14Z",
+    "status": "live"
+  },
+  {
+    "name": "佐伯イッテツ",
+    "title": "【Capcom Fighting Collection】ドォンドゥン(銅鑼)【にじさんじ／佐伯イッテツ】",
+    "videoId": "IHZ5rlAnT_4",
+    "url": "https://www.youtube.com/watch?v=IHZ5rlAnT_4",
+    "thumbnail": "https://i.ytimg.com/vi/IHZ5rlAnT_4/hqdefault.jpg?v=6b057796",
+    "scheduledAt": "2026-11-24T12:00:19Z",
     "status": "live"
   },
   {
