@@ -1,5 +1,14 @@
 [
   {
+    "name": "緋八マナ",
+    "title": "【One Million Coins】100万コイン分の金庫を素手で空にするだけのゲーム【にじさんじ/緋八マナ】",
+    "videoId": "K4t9_1YZNGs",
+    "url": "https://www.youtube.com/watch?v=K4t9_1YZNGs",
+    "thumbnail": "https://i.ytimg.com/vi/K4t9_1YZNGs/hqdefault.jpg?v=6b056bfb",
+    "scheduledAt": "2026-11-24T13:00:00Z",
+    "status": "upcoming"
+  },
+  {
     "name": "佐伯イッテツ",
     "title": "【Capcom Fighting Collection】ドォン(銅鑼)【にじさんじ／佐伯イッテツ】",
     "videoId": "tBVR_buPVrY",
@@ -918,15 +927,6 @@
     "status": "past"
   },
   {
-    "name": "緋八マナ",
-    "title": "ホラゲーより怖い行動をする緋八マナ【にじさんじ/緋八マナ】",
-    "videoId": "SW1qfKSoOog",
-    "url": "https://www.youtube.com/watch?v=SW1qfKSoOog",
-    "thumbnail": "https://i.ytimg.com/vi/SW1qfKSoOog/hqdefault.jpg",
-    "scheduledAt": "2026-10-27T13:59:59Z",
-    "status": "past"
-  },
-  {
     "name": "佐伯イッテツ",
     "title": "【ほぼ初見part06】意気揚々？いや、いっき揚々！！【にじさんじ／佐伯イッテツ】",
     "videoId": "XjG-jX3EHwA",
@@ -1078,14 +1078,5 @@
     "thumbnail": "https://i.ytimg.com/vi/zTOp6ffRvco/hqdefault.jpg",
     "scheduledAt": "2026-10-06T11:00:00Z",
     "status": "past"
-  },
-  {
-    "name": "緋八マナ",
-    "title": "【One Million Coins】100万コイン分の金庫を素手で空にするだけのゲーム【にじさんじ/緋八マナ】",
-    "videoId": "K4t9_1YZNGs",
-    "url": "https://www.youtube.com/watch?v=K4t9_1YZNGs",
-    "thumbnail": "https://i.ytimg.com/vi/K4t9_1YZNGs/hqdefault.jpg",
-    "scheduledAt": null,
-    "status": "upcoming"
   }
 ]
