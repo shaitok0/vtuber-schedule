@@ -1078,5 +1078,14 @@
     "thumbnail": "https://i.ytimg.com/vi/zTOp6ffRvco/hqdefault.jpg",
     "scheduledAt": "2026-10-06T11:00:00Z",
     "status": "past"
+  },
+  {
+    "name": "緋八マナ",
+    "title": "【One Million Coins】100万コイン分の金庫を素手で空にするだけのゲーム【にじさんじ/緋八マナ】",
+    "videoId": "K4t9_1YZNGs",
+    "url": "https://www.youtube.com/watch?v=K4t9_1YZNGs",
+    "thumbnail": "https://i.ytimg.com/vi/K4t9_1YZNGs/hqdefault.jpg",
+    "scheduledAt": null,
+    "status": "upcoming"
   }
 ]
