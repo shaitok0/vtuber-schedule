@@ -2,7 +2,7 @@ name: Update VTuber Schedule
 
 on:
   schedule:
-    - cron: '7,22,37,52 * * * *' 
+  - cron: '0 */2 * * *' 
   workflow_dispatch:
 
 permissions:
