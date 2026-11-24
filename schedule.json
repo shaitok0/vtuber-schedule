@@ -18,6 +18,15 @@
     "status": "past"
   },
   {
+    "name": "宇佐美リト",
+    "title": "【Apex Legends】#ぶいすぽGG 大会本番だ！！！ メイカさん 一ノ瀬さん【宇佐美リト/にじさんじ】",
+    "videoId": "6KK-dZb77tE",
+    "url": "https://www.youtube.com/watch?v=6KK-dZb77tE",
+    "thumbnail": "https://i.ytimg.com/vi/6KK-dZb77tE/hqdefault.jpg",
+    "scheduledAt": "2026-11-23T09:59:42Z",
+    "status": "past"
+  },
+  {
     "name": "緋八マナ",
     "title": "【APEX】大会本番！楽しくしゃべって勝つ！【にじさんじ/緋八マナ】",
     "videoId": "oESFTiuq8pU",
@@ -33,6 +42,15 @@
     "url": "https://www.youtube.com/watch?v=nvAQ1T6JCrA",
     "thumbnail": "https://i.ytimg.com/vi/nvAQ1T6JCrA/hqdefault.jpg",
     "scheduledAt": "2026-11-22T22:58:20Z",
+    "status": "past"
+  },
+  {
+    "name": "赤城ウェン",
+    "title": "【絶対遵守】謎解き苦手メンズ！ルールを間違えたら即終了ゲームに挑む！【にじさんじ / 赤城ウェン】",
+    "videoId": "yaUNK7xUQeQ",
+    "url": "https://www.youtube.com/watch?v=yaUNK7xUQeQ",
+    "thumbnail": "https://i.ytimg.com/vi/yaUNK7xUQeQ/hqdefault.jpg",
+    "scheduledAt": "2026-11-22T13:31:30Z",
     "status": "past"
   },
   {
@@ -1060,23 +1078,5 @@
     "thumbnail": "https://i.ytimg.com/vi/zTOp6ffRvco/hqdefault.jpg",
     "scheduledAt": "2026-10-06T11:00:00Z",
     "status": "past"
-  },
-  {
-    "name": "宇佐美リト",
-    "title": "【Apex Legends】#ぶいすぽGG 大会本番だ！！！ メイカさん 一ノ瀬さん【宇佐美リト/にじさんじ】",
-    "videoId": "6KK-dZb77tE",
-    "url": "https://www.youtube.com/watch?v=6KK-dZb77tE",
-    "thumbnail": "https://i.ytimg.com/vi/6KK-dZb77tE/hqdefault.jpg",
-    "scheduledAt": null,
-    "status": "live"
-  },
-  {
-    "name": "赤城ウェン",
-    "title": "【絶対遵守】謎解き苦手メンズ！ルールを間違えたら即終了ゲームに挑む！【にじさんじ / 赤城ウェン】",
-    "videoId": "yaUNK7xUQeQ",
-    "url": "https://www.youtube.com/watch?v=yaUNK7xUQeQ",
-    "thumbnail": "https://i.ytimg.com/vi/yaUNK7xUQeQ/hqdefault.jpg",
-    "scheduledAt": null,
-    "status": "live"
   }
 ]
